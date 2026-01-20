@@ -1,8 +1,51 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PROGRAMS_DATA } from '../constants';
 import { CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
+
+const PROGRAMS_DATA = [
+  {
+    id: 1,
+    title: 'Health Programs',
+    description: 'Initiatives focused on improving health outcomes and access to healthcare services.',
+    image: '/images/program-health.jpg', // replace with your actual image path
+    details: ['Community health outreach', 'Vaccination campaigns', 'Health education programs']
+  },
+  {
+    id: 2,
+    title: 'Youth and Women Economic Empowerment',
+    description: 'Programs empowering youth and women through skills training and economic opportunities.',
+    image: '/images/program-empowerment.jpg',
+    details: ['Vocational training', 'Microfinance initiatives', 'Entrepreneurship support']
+  },
+  {
+    id: 3,
+    title: 'Child Protection and Child Rights Governance',
+    description: 'Ensuring children’s rights are protected and advocating for child welfare governance.',
+    image: '/images/program-child.jpg',
+    details: ['Child rights advocacy', 'Child protection services', 'Policy engagement']
+  },
+  {
+    id: 4,
+    title: 'Environmental Protection',
+    description: 'Projects focused on environmental conservation and sustainable practices.',
+    image: '/images/program-environment.jpg',
+    details: ['Reforestation projects', 'Waste management initiatives', 'Environmental education']
+  },
+  {
+    id: 5,
+    title: 'Education Programs',
+    description: 'Providing access to quality education and learning resources for communities.',
+    image: '/images/program-education.jpg',
+    details: ['School construction', 'Teacher training', 'Scholarship programs']
+  },
+  {
+    id: 6,
+    title: 'Peace Building and Governance',
+    description: 'Promoting peace, conflict resolution, and good governance in communities.',
+    image: '/images/program-peace.jpg',
+    details: ['Conflict resolution workshops', 'Community dialogue', 'Governance training']
+  }
+];
 
 export const Programs = () => {
   return (
@@ -20,25 +63,6 @@ export const Programs = () => {
       </section>
 
       <section className="py-24 max-w-7xl mx-auto px-6">
-        <div className="mb-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-end">
-          <div>
-            <h2 className="text-4xl font-black text-slate-900 mb-6 tracking-tight uppercase">Transforming Lives Through Action</h2>
-            <p className="text-lg text-slate-600 leading-relaxed font-medium">
-              APDFE operates across Central African Republic, Democratic Republic of Congo, Congo-Brazzaville, and Cameroon with six core program areas addressing the most critical needs in our communities.
-            </p>
-          </div>
-          <div className="flex gap-4">
-            <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl flex-grow">
-               <div className="text-3xl font-black text-blue-600 mb-1">9</div>
-               <div className="text-[10px] font-black uppercase text-slate-400 tracking-widest">Active Sectors</div>
-            </div>
-            <div className="p-6 bg-slate-50 border border-slate-100 rounded-2xl flex-grow">
-               <div className="text-3xl font-black text-green-600 mb-1">4</div>
-               <div className="text-[10px] font-black uppercase text-slate-400 tracking-widest">Nations Reached</div>
-            </div>
-          </div>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {PROGRAMS_DATA.map((program) => (
             <div key={program.id} className="bg-white border border-slate-100 rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all flex flex-col group h-full">
@@ -54,15 +78,12 @@ export const Programs = () => {
                   {program.description}
                 </p>
                 <div className="space-y-3 mb-8">
-                  {program.details.slice(0, 3).map((detail, idx) => (
+                  {program.details.map((detail, idx) => (
                     <div key={idx} className="flex items-center gap-3 text-[11px] font-black uppercase tracking-wider text-slate-800">
                       <CheckCircle2 size={16} className="text-green-500 flex-shrink-0" />
                       {detail}
                     </div>
                   ))}
-                  {program.details.length > 3 && (
-                    <div className="text-[10px] text-slate-400 font-bold uppercase pl-7">+ {program.details.length - 3} more modules</div>
-                  )}
                 </div>
               </div>
               <div className="px-10 pb-10">
@@ -72,30 +93,6 @@ export const Programs = () => {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* Impact summary section */}
-      <section className="bg-blue-900 py-32 text-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
-            <div>
-              <div className="text-5xl md:text-7xl font-black mb-4">50,000+</div>
-              <div className="text-[11px] uppercase tracking-[0.3em] text-blue-300 font-black">Lives Directly Impacted</div>
-            </div>
-            <div>
-              <div className="text-5xl md:text-7xl font-black mb-4">4</div>
-              <div className="text-[11px] uppercase tracking-[0.3em] text-blue-300 font-black">Countries of Operation</div>
-            </div>
-            <div>
-              <div className="text-5xl md:text-7xl font-black mb-4">65%</div>
-              <div className="text-[11px] uppercase tracking-[0.3em] text-blue-300 font-black">Women & Girls Reached</div>
-            </div>
-            <div>
-              <div className="text-5xl md:text-7xl font-black mb-4">120+</div>
-              <div className="text-[11px] uppercase tracking-[0.3em] text-blue-300 font-black">Communities Served</div>
-            </div>
-          </div>
         </div>
       </section>
     </div>
