@@ -54,7 +54,7 @@ const Navbar = () => {
           subItems: ['Sexual Health (SRHR)', 'Malnutrition Support', 'Mental Health (MHPSS)'] 
         },
         { 
-          name: 'Economic Empowerment', 
+          name: 'Youth And Women Economic Empowerment', 
           path: '/program/economic', 
           icon: <Briefcase size={14} />,
           subItems: ['Vocational Training', 'Financial Literacy', 'Women Entrepreneurship']
